@@ -1,3 +1,4 @@
+import datas from "../MOCK_DATA.json"
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 export const STATUSES = Object.freeze({
@@ -33,7 +34,7 @@ export default productSlice.reducer;
 
 // Thunks
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
-  const res = await fetch("https://fakestoreapi.com/products");
-  const data = await res.json();
+  // const res = await fetch('https://dummyjson.com/products');
+  const data = datas;
   return data;
 });
